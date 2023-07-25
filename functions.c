@@ -46,7 +46,7 @@ int spec_handler(char spec, va_list arguments, int count)
 	switch (spec)
 	{
 		case '%':
-			{
+		{
 			_putchar('%');
 			count++;
 			break;
@@ -56,7 +56,7 @@ int spec_handler(char spec, va_list arguments, int count)
 
 			_putchar(character);
 			count++;
-			break
+			break;
 		}
 		case 's':
 		{
