@@ -2,9 +2,6 @@
 #include <unistd.h>
 #include "main.h"
 
-int stringer(char *string);
-int spec_handler(char *spec, va_list arguments, int count);
-
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -44,38 +41,33 @@ int stringer(char *string)
  * @count: The current count of characters printed
  * Return: The updated count after handling the specifier
 */
-int spec_handler(char *spec, va_list arguments, int count)
+
+int spec_handler(const char *spec, va_list arguments, int count)
 {
-	switch (spec)
+	if (*spec == '%')
 	{
-		case '%':
-		{
-			_putchar('%');
-			count++;
-			break;
-		case 'c':
-		{
-			char character = va_arg(arguments, int);
-
-			_putchar(character);
-			count++;
-			break;
-		}
-		case 's':
-		{
-			char str = va_arg(arguments, int);
-
-			stringer(&str);
-			count++;
-			break;
-		}
-		default:
-		{
-			_putchar('%');
-			_putchar(spec);
-			count += 2;
-			break;
-		}
+		_putchar('%');
+		count++;
 	}
+	else if (*spec == 'c')
+	{
+		char character = va_arg(arguments, int);
+
+		_putchar(character);
+		count++;
+	}
+	else if (*spec == 's')
+	{
+		char *str = va_arg(arguments, char*);
+
+		count += stringer(str);
+	}
+	else
+	{
+		_putchar('%');
+		_putchar(*spec);
+		count += 2;
+	}
+
 	return (count);
 }

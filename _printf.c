@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "main.h"
 
 /**
@@ -10,19 +11,19 @@
 
 int _printf(const char *format, ...)
 {
-	int counter = 0;
+	int count = 0, index = 0;
 	va_list arguments;
 	/* first checks conditions */
 	if (format == NULL)
 		return (-1);
 
 	va_start(arguments, format);
-	while (format)
+	while (format[index] != '\0')
 	{
-		if (format == '%')
+		if (format[index] == '%')
 		{
 			index++;
-			count += spec_handler(*format, arguments, count);
+			count += spec_handler(&format[index], arguments, count);
 			index++;
 		}
 		else
