@@ -1,6 +1,3 @@
-#include <stdarg.h>
-#include <limits.h>
-#include <unistd.h>
 #include "main.h"
 
 /**
@@ -25,7 +22,7 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			count += spec_handler(format[index], arguments, count);
+			count += spec_handler(format + index, arguments, count);
 			index++;
 		}
 		else
