@@ -60,7 +60,7 @@ int spec_handler(char spec, va_list arguments, int count)
 		}
 		case 's':
 		{
-			char str = va_arg(arguments, char);
+			char str = va_arg(arguments, int);
 
 			stringer(&str);
 			count++;
