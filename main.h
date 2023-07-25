@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <limits.h>
-#include "functions.c"
 
 int _putchar(char c);
 int stringer(char *string);

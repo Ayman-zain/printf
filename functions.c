@@ -62,7 +62,7 @@ int spec_handler(char spec, va_list arguments, int count)
 		{
 			char str = va_arg(arguments, char);
 
-			stringer(str);
+			stringer(&str);
 			count++;
 			break;
 		}
