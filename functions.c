@@ -43,36 +43,29 @@ int stringer(char *string)
 */
 int spec_handler(char spec, va_list arguments, int count)
 {
-	switch (spec)
-	{
-		case '%':
-		{
-			_putchar('%');
-			count++;
-			break;
-		case 'c':
-		{
-			char character = va_arg(arguments, int);
+    if (spec == '%')
+    {
+        _putchar('%');
+        count++;
+    }
+    else if (spec == 'c')
+    {
+        char character = va_arg(arguments, int);
+        _putchar(character);
+        count++;
+    }
+    else if (spec == 's')
+    {
+        char str = va_arg(arguments, char);
+        stringer(str);
+        count += stringer(str);
+    }
+    else
+    {
+        _putchar('%');
+        _putchar(*spec);
+        count += 2;
+    }
 
-			_putchar(character);
-			count++;
-			break;
-		}
-		case 's':
-		{
-			char str = va_arg(arguments, int);
-
-			stringer(&str);
-			count++;
-			break;
-		}
-		default:
-		{
-			_putchar('%');
-			_putchar(spec);
-			count += 2;
-			break;
-		}
-	}
-	return (count);
+    return count;
 }
