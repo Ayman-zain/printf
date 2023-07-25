@@ -2,6 +2,9 @@
 #include <unistd.h>
 #include "main.h"
 
+int stringer(char *string);
+int spec_handler(char *spec, va_list arguments, int count);
+
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -41,7 +44,7 @@ int stringer(char *string)
  * @count: The current count of characters printed
  * Return: The updated count after handling the specifier
 */
-int spec_handler(char spec, va_list arguments, int count)
+int spec_handler(char *spec, va_list arguments, int count)
 {
 	switch (spec)
 	{

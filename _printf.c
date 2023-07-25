@@ -10,19 +10,19 @@
 
 int _printf(const char *format, ...)
 {
-	int index = 0, count = 0;
+	int counter = 0;
 	va_list arguments;
 	/* first checks conditions */
 	if (format == NULL)
 		return (-1);
 
 	va_start(arguments, format);
-	while (format[index] != '\0')
+	while (format)
 	{
-		if (format[index] == '%')
+		if (format == '%')
 		{
 			index++;
-			count += spec_handler(format + index, arguments, count);
+			count += spec_handler(*format, arguments, count);
 			index++;
 		}
 		else
