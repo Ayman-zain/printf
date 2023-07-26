@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			count = spec_handler(&format[index], arguments);
+			count += spec_handler(&format[index], arguments);
 			index++;
 		}
 		else
