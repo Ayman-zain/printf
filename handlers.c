@@ -5,7 +5,7 @@
  * spec_handler - Handles the different format specifiers
  * @spec: The format specifier to handle
  * @arguments: The va_list of arguments
- * @count: The current count of characters printed
+ *
  * Return: The updated count after handling the specifier
 */
 
