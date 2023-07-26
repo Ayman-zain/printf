@@ -23,13 +23,14 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			count += spec_handler(&format[index], arguments, count);
+			count = spec_handler(&format[index], arguments);
 			index++;
 		}
 		else
 		{
 			_putchar(format[index]);
 			index++;
+			count++;
 		}
 	}
 	va_end(arguments);

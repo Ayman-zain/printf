@@ -42,8 +42,10 @@ int stringer(char *string)
  * Return: The updated count after handling the specifier
 */
 
-int spec_handler(const char *spec, va_list arguments, int count)
+int spec_handler(const char *spec, va_list arguments)
 {
+	int count = 0;
+
 	if (*spec == '%')
 	{
 		_putchar('%');
