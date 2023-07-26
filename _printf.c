@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "main.h"
 
 /**
@@ -10,7 +11,7 @@
 
 int _printf(const char *format, ...)
 {
-	int index = 0, count = 0;
+	int count = 0, index = 0;
 	va_list arguments;
 	/* first checks conditions */
 	if (format == NULL)
@@ -22,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			count += spec_handler(format + index, arguments, count);
+			count += spec_handler(&format[index], arguments, count);
 			index++;
 		}
 		else
