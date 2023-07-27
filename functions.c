@@ -33,3 +33,40 @@ int stringer(char *string)
 	}
 	return (index);
 }
+/**
+ * print_int - print an int;
+ * @n: the int.
+ * Return: lenth of the int
+ */
+int print_int(int n) {
+int count = 0;
+int d = 0;
+int g = n;
+int arr[15];
+int i,j;
+if (n < 0)
+	{
+	_putchar('-');
+	n = -n;
+	count++;
+	}
+do {
+	g /= 10;
+	++d;
+  } while (g != 0);
+i = 0;
+while (i < d)
+{
+	arr[i] = n % 10;
+	n/=10;
+	count++;
+	i++;
+}
+j = d-1;
+while (j >= 0)
+{
+	 _putchar(arr[j] + '0');
+	j--;
+	}
+return (count);
+}

@@ -31,6 +31,11 @@ int spec_handler(const char *spec, va_list arguments)
 
 		count += stringer(str);
 	}
+	 else if (*spec == 'd' || *spec == 'i')
+        {
+		int a = va_arg(arguments, int);
+		count += print_int(a)-1;
+        }
 	else
 	{
 		_putchar('%');
