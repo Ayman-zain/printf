@@ -78,3 +78,22 @@ while (j >= 0)
 }
 return (count);
 }
+/**
+ * ToBinary - receive an int and print it in binary
+ * @n: number to be printed
+ * Return: length
+ */
+int ToBinary(int n)
+{
+	int arr[66], i = 0, j = 0;
+
+	while (n > 0)
+	{
+		arr[i] = n % 2;
+		n = n / 2;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+		_putchar(arr[j] + '0');
+	return (i);
+}
