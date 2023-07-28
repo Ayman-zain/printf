@@ -2,6 +2,7 @@
 #define MAIN_GUARD
 
 #include <stdarg.h>
+#include <limits.h>
 
 int _putchar(char c);
 int stringer(char *string);
