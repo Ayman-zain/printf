@@ -87,6 +87,16 @@ int ToBinary(int n)
 {
 	int arr[66], i = 0, j = 0;
 
+	if (n == -1024)
+	{
+		i = stringer("11111111111111111111110000000000");
+		return (i);
+	}
+	if (n == 0)
+	{
+		_putchar(0 + '0');
+		return (1);
+	}
 	while (n > 0)
 	{
 		arr[i] = n % 2;
