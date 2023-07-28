@@ -64,12 +64,12 @@ i = 0;
 while (i < d)
 {
 	arr[i] = n % 10;
-	if (checkMIN == 1)
-		arr[0] += 1;
 	n /= 10;
 	count++;
 	i++;
 }
+if (checkMIN == 1)
+	arr[0] += 1;
 j = d - 1;
 while (j >= 0)
 {
