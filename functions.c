@@ -107,3 +107,21 @@ int ToBinary(int n)
 		_putchar(arr[j] + '0');
 	return (i);
 }
+/**
+ * to_octal - to octa
+ * @int: int to be worked with
+ * Return: length
+ */
+int to_octal(int d)
+{
+int octal = 0, i = 1,count;
+
+while (d != 0)
+{
+octal += (d % 8) * i;
+d /= 8;
+i *= 10;
+}
+count = print_int(octal);
+return (count);
+}

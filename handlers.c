@@ -43,6 +43,30 @@ int spec_handler(const char *spec, va_list arguments)
 
 		count += ToBinary(a);
 	}
+	else if (*spec == 'o')
+	{
+		int a = va_arg(arguments, int);
+
+		count += to_octal(a);
+	}
+	else if (*spec == 'x')
+	{
+		int a = va_arg(arguments, int);
+
+		count += print_x(a);
+	}
+	else if (*spec == 'X')
+	{
+		int a = va_arg(arguments, int);
+
+		count += print_X(a);
+	}
+	else if (*spec == 'u')
+	{
+		unsigned int a = va_arg(arguments, unsigned int);
+
+		count += print_u(a);
+        }
 	else
 	{
 		_putchar('%');
@@ -50,5 +74,5 @@ int spec_handler(const char *spec, va_list arguments)
 		count += 2;
 	}
 
-	return (count);
+return (count);
 }
